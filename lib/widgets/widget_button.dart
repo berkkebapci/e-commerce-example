@@ -7,6 +7,7 @@ class BasicButton extends StatelessWidget {
   final Color? textColor;
   final double? buttonHeight;
   final double radius;
+  final FontWeight? fontWeight;
   final Function()? onTap;
 
   const BasicButton({
@@ -17,6 +18,7 @@ class BasicButton extends StatelessWidget {
     this.buttonHeight = 40,
     this.radius = 10,
     this.onTap,
+    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -33,7 +35,7 @@ class BasicButton extends StatelessWidget {
         child: Center(
           child: Text(
             buttonText,
-            style: TextStyle(color: textColor),
+            style: TextStyle(color: textColor,fontWeight: fontWeight),
           ),
         ),
       ),

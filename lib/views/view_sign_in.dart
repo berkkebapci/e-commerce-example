@@ -1,6 +1,7 @@
 import 'package:e_commerce_example/shared/uicolor.dart';
 import 'package:e_commerce_example/shared/uitext.dart';
 import 'package:e_commerce_example/views/view_home.dart';
+import 'package:e_commerce_example/views/view_sign_up.dart';
 import 'package:e_commerce_example/widgets/widget_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -104,6 +105,7 @@ class _ViewSignInState extends State<ViewSignIn> {
                       backgroundColor: UIColor.primaryGreen,
                       buttonText: UIText.singIn,
                       textColor: UIColor.white,
+                      fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
                       height: 24,
@@ -121,12 +123,17 @@ class _ViewSignInState extends State<ViewSignIn> {
                         const SizedBox(
                           width: 8,
                         ),
-                        Text(
-                          UIText.singUp,
-                          style: TextStyle(
-                            color: UIColor.primaryGreen,
-                            fontSize: 14,
-                            decoration: TextDecoration.underline,
+                        InkWell(
+                          onTap: () {
+                            Get.to(const ViewSignUp());
+                          },
+                          child: Text(
+                            UIText.singUpHere,
+                            style: TextStyle(
+                              color: UIColor.primaryGreen,
+                              fontSize: 14,
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
                         ),
                       ],
