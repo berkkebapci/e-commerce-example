@@ -1,7 +1,10 @@
 import 'package:e_commerce_example/shared/uicolor.dart';
+import 'package:e_commerce_example/shared/uipath.dart';
 import 'package:e_commerce_example/shared/uitext.dart';
 import 'package:e_commerce_example/views/view_home.dart';
+import 'package:e_commerce_example/views/view_sign_in.dart';
 import 'package:e_commerce_example/widgets/widget_button.dart';
+import 'package:e_commerce_example/widgets/widget_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,9 +20,9 @@ class _ViewSignUpState extends State<ViewSignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
+            image: AssetImage(UIPath.background),
             fit: BoxFit.cover,
           ),
         ),
@@ -31,23 +34,21 @@ class _ViewSignUpState extends State<ViewSignUp> {
                 padding: const EdgeInsets.only(top: 150),
                 child: Column(
                   children: [
-                    Text(
-                      UIText.loginTitle,
-                      style: const TextStyle(
-                          letterSpacing: 1.7,
-                          color: Colors.white,
-                          fontSize: 48,
-                          fontWeight: FontWeight.bold),
+                    TextBasic(
+                      text: UIText.loginTitle,
+                      color: UIColor.white,
+                      letterSpacing: 1.7,
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text(
-                      UIText.loginSubTitle,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
+                    TextBasic(
+                      text: UIText.loginSubTitle,
+                      color: UIColor.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                     ),
                   ],
                 ),
@@ -109,7 +110,7 @@ class _ViewSignUpState extends State<ViewSignUp> {
                             ),
                             height: 50,
                             width: 50,
-                            child: Image.asset("assets/icons/appleLogo.png")),
+                            child: Image.asset(UIPath.appleLogo)),
                         const SizedBox(
                           width: 12,
                         ),
@@ -120,7 +121,7 @@ class _ViewSignUpState extends State<ViewSignUp> {
                             ),
                             height: 50,
                             width: 50,
-                            child: Image.asset("assets/icons/facebookLogo.png")),
+                            child: Image.asset(UIPath.facebookLogo)),
                         const SizedBox(
                           width: 12,
                         ),
@@ -131,29 +132,32 @@ class _ViewSignUpState extends State<ViewSignUp> {
                             ),
                             height: 50,
                             width: 50,
-                            child: Image.asset("assets/icons/googleLogo.png")),
+                            child: Image.asset(UIPath.googleLogo)),
                       ],
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          UIText.signUpAccountQuestion,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold),
+                        TextBasic(
+                          text: UIText.signUpAccountQuestion,
+                          color: UIColor.white,
+                          fontSize: 14,
                         ),
                         const SizedBox(
                           width: 8,
                         ),
-                        Text(
-                          UIText.singInHere,
-                          style: TextStyle(
+                        InkWell(
+                          onTap: () {
+                            Get.to(const ViewSignIn());
+                          },
+                          child: TextBasic(
+                            text: UIText.singInHere,
                             color: UIColor.primaryGreen,
                             fontSize: 14,
-                            decoration: TextDecoration.underline,
+                            underline: true,
                           ),
                         ),
                       ],

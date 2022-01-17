@@ -5,9 +5,9 @@ class UIColor {
   static Color transparent = Colors.transparent;
   static Color black = const Color(0xFF000000);
   static Color primaryGreen = const Color(0xFF0ACF83);
-  static Color white = const Color(0xFFFFFFFF); //background color
-  static Color harp = const Color(0xFFDCECE0);
-  static Color salem = const Color(0xFF0C874E);
+  static Color white = const Color(0xFFFFFFFF); 
+  static Color tabBarBackgroundColor = const Color(0xFFF6F6F6);
+  static Color gray = const Color(0xFF7F7F7F);
   static Color mirage = const Color(0xFF151B26);
   static Color blueRomance = const Color(0xFFCEF5DF);
   static Color malibu = const Color(0xFF6DCFF6);

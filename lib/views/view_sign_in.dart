@@ -1,8 +1,10 @@
 import 'package:e_commerce_example/shared/uicolor.dart';
+import 'package:e_commerce_example/shared/uipath.dart';
 import 'package:e_commerce_example/shared/uitext.dart';
 import 'package:e_commerce_example/views/view_home.dart';
 import 'package:e_commerce_example/views/view_sign_up.dart';
 import 'package:e_commerce_example/widgets/widget_button.dart';
+import 'package:e_commerce_example/widgets/widget_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +20,9 @@ class _ViewSignInState extends State<ViewSignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
+            image: AssetImage(UIPath.background),
             fit: BoxFit.cover,
           ),
         ),
@@ -32,23 +34,21 @@ class _ViewSignInState extends State<ViewSignIn> {
                 padding: const EdgeInsets.only(top: 150),
                 child: Column(
                   children: [
-                    Text(
-                      UIText.loginTitle,
-                      style: const TextStyle(
-                          letterSpacing: 1.7,
-                          color: Colors.white,
-                          fontSize: 48,
-                          fontWeight: FontWeight.bold),
+                    TextBasic(
+                      text: UIText.loginTitle,
+                      color: UIColor.white,
+                      letterSpacing: 1.7,
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text(
-                      UIText.loginSubTitle,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
+                    TextBasic(
+                      text: UIText.loginSubTitle,
+                      color: UIColor.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                     ),
                   ],
                 ),
@@ -87,12 +87,11 @@ class _ViewSignInState extends State<ViewSignIn> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 32),
-                      child: Text(
-                        UIText.forgotPswrd,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                      child: TextBasic(
+                        text: UIText.forgotPswrd,
+                        color: UIColor.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(
@@ -100,7 +99,7 @@ class _ViewSignInState extends State<ViewSignIn> {
                     ),
                     BasicButton(
                       onTap: () {
-                        Get.to(const ViewHome());
+                        Get.to(() => const ViewHome());
                       },
                       backgroundColor: UIColor.primaryGreen,
                       buttonText: UIText.singIn,
@@ -113,12 +112,10 @@ class _ViewSignInState extends State<ViewSignIn> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          UIText.loginAccountQuestion,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold),
+                        TextBasic(
+                          text: UIText.loginAccountQuestion,
+                          color: UIColor.white,
+                          fontSize: 14,
                         ),
                         const SizedBox(
                           width: 8,
@@ -127,13 +124,11 @@ class _ViewSignInState extends State<ViewSignIn> {
                           onTap: () {
                             Get.to(const ViewSignUp());
                           },
-                          child: Text(
-                            UIText.singUpHere,
-                            style: TextStyle(
-                              color: UIColor.primaryGreen,
-                              fontSize: 14,
-                              decoration: TextDecoration.underline,
-                            ),
+                          child: TextBasic(
+                            text: UIText.singUpHere,
+                            color: UIColor.primaryGreen,
+                            fontSize: 14,
+                            underline: true,
                           ),
                         ),
                       ],
