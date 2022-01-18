@@ -78,18 +78,7 @@ class _ViewProductDetailState extends State<ViewProductDetail>
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
-            TextBasic(
-              text: UIText.productName4,
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-              color: UIColor.black,
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            getTabHeader(),
             getTabBarView(),
-            getReview(),
           ],
         ),
       ),
@@ -185,7 +174,7 @@ class _ViewProductDetailState extends State<ViewProductDetail>
           height: 12,
         ),
         TextBasic(
-          text: "Highly Detailed Audio",
+          text: UIText.featuresTitle,
           fontSize: 18,
           fontWeight: FontWeight.bold,
           color: UIColor.black,
@@ -194,8 +183,7 @@ class _ViewProductDetailState extends State<ViewProductDetail>
           height: 12,
         ),
         TextBasic(
-          text:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          text: UIText.loremIpsum * 2,
           color: UIColor.black,
           letterSpacing: 1.7,
         )
@@ -204,16 +192,63 @@ class _ViewProductDetailState extends State<ViewProductDetail>
   }
 
   Widget tabBarSpecification() {
-    return const Center(child: TextBasic(text: "Specification", fontSize: 32));
-  }
-
-  Widget getReview() {
-    return Column(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextBasic(
-          text: "Review (102)",
-          color: UIColor.black,
-          fontSize: 20,
+        Image.asset(UIPath.profilePicture),
+        const SizedBox(
+          width: 12,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextBasic(
+              text: UIText.userName,
+              color: UIColor.black,
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            SizedBox(
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 200,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image.asset(UIPath.star),
+                        Image.asset(UIPath.star),
+                        Image.asset(UIPath.star),
+                        Image.asset(UIPath.star),
+                        Image.asset(UIPath.star),
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  TextBasic(
+                    text: UIText.commentDate,
+                    color: UIColor.black,
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            SizedBox(
+              width: 270,
+              child: TextBasic(
+                text: UIText.loremIpsum,
+                color: UIColor.black,
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+          ],
         ),
       ],
     );

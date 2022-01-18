@@ -5,6 +5,7 @@ import 'package:e_commerce_example/views/view_home.dart';
 import 'package:e_commerce_example/views/view_sign_in.dart';
 import 'package:e_commerce_example/widgets/widget_button.dart';
 import 'package:e_commerce_example/widgets/widget_text.dart';
+import 'package:e_commerce_example/widgets/widget_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -57,33 +58,18 @@ class _ViewSignUpState extends State<ViewSignUp> {
                 padding: const EdgeInsets.only(bottom: 80, left: 24, right: 24),
                 child: Column(
                   children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: "Email",
-                          hintStyle:
-                              const TextStyle(fontWeight: FontWeight.w300),
-                          prefixIcon: const Icon(Icons.mail_outline)),
+                    const GetTextFormField(
+                      obscureText: false,
+                      hint: "Email",
+                      prefixIcon: Icon(Icons.mail_outline),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
+                    const GetTextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: "Password",
-                          hintStyle:
-                              const TextStyle(fontWeight: FontWeight.w300),
-                          prefixIcon: const Icon(Icons.lock_outline)),
+                      hint: "Password",
+                      prefixIcon: Icon(Icons.lock_outlined),
                     ),
                     const SizedBox(
                       height: 24,

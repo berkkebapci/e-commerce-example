@@ -39,5 +39,8 @@ class UIText {
   static String overview = "Overview";
   static String features = "Features";
   static String specification = "Specification";
-
+  static String commentDate = "1 Month ago";
+  static String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ";
+  static String featuresTitle = "Highly Detailed Audio";
+  static String reviewWithNumber = "Review (102)";
 }
